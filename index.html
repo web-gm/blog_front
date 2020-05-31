@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="keywords" content="毕日乌, 前端日常分享"><meta name="description" content=""><title>前端日常分享</title><link rel="icon" href="/images/icons/favicon-16x16.png?v=1.6.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=1.6.0" type="image/png" sizes="32x32"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=1.6.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  fontawesome: {"prefix":"fa"},
+  sidebar: {"offsetTop":"30px","tocMaxDepth":4},
+  header: {"scrollDownIcon":false},
+  post_widget: {"end_text":true},
+  night_mode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","word_wrap":false},
+  reward: true,
+  fancybox: false,
+  zoom_image: {"enable":true,"mask_color":"rgba(0,0,0,0.6)"},
+  gallery_waterfall: undefined,
+  lazyload: undefined,
+  pjax: undefined,
+  external_link: {"icon":{"enable":true,"name":"external-link"}},
+  shortcuts: {"switch_post":false},
+  prompt: {"copy_success":"复制成功","copy_error":"复制失败","creative_commons":"知识共享","copy_button":"复制代码"}
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav"><div class="header-nav-inner"><div class="header-nav-btn fa fa-bars"></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/"><i class="fa fa-home"></i>首页</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/archives/"><i class="fa fa-folder-open"></i>归档</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/categories/"><i class="fa fa-th"></i>分类</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/tags/"><i class="fa fa-tags"></i>标签</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/about/"><i class="fa fa-user"></i>关于</a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-info"><div class="header-info-inner"><div class="header-info-title">前端日常分享</div><div class="header-info-subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home"><section class="post-list"><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/31/%E5%8F%98%E9%87%8F/">变量</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-31</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt">
+        <h2   id="1-基本类型和引用类型" >
+          <span class="heading-link">1. 基本类型和引用类型</span>
+        </h2>
+      <blockquote>
+<p>基本类型：Undefined、Null、Boolean、Number、String<br>引用类型：Object(Function、Array、RegExp…)</p>
+</blockquote>
+
+        <h2   id="2-变量的复制" >
+          <span class="heading-link">2. 变量的复制</span>
+        </h2>
+      <p>1）基本类型的复制</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">5</span></span><br><span class="line"><span class="keyword">var</span> num2 = num1</span><br><span class="line">num2 = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(num1)  <span class="comment">// 5</span></span><br></pre></td></tr></table></div></figure>
+<p><strong>复制过程</strong><br><img src="img/4-1.png" alt="复制过程"></p>
+<p>2）引用类型的复制（易出面试题）</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1</span><br><span class="line">obj2.name = <span class="string">'Mary'</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1.name) <span class="comment">// Mary</span></span><br></pre></td></tr></table></div></figure>
+<p><strong>复制过程</strong><br><img src="img/4-2.png" alt="复制过程"></p>
+
+        <h2   id="3-传递参数" >
+          <span class="heading-link">3. 传递参数</span>
+        </h2>
+      <p><strong><em>ECMAScript 中所有函数的参数都是按值传递的</em></strong></p>
+<p>第一个例子</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span> (<span class="params">num</span>) </span>&#123;</span><br><span class="line">  num += <span class="number">10</span></span><br><span class="line">  <span class="keyword">return</span> num</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">20</span></span><br><span class="line"><span class="keyword">var</span> result = addTen(count)</span><br><span class="line"><span class="built_in">console</span>.log(count) <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 30</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数的传递是按值传递的</span></span><br><span class="line"><span class="comment">// 所以在函数中使用的是复制的count</span></span><br><span class="line"><span class="comment">// 对该参数进行操作，不会影响原有值</span></span><br></pre></td></tr></table></div></figure>
+
+<p>第二个例子</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj.name = <span class="string">'Nicholas'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line">setName(person)</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// 'Nicholas'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 很奇怪，不是按值传递吗，这里不应该是undefind吗?</span></span><br><span class="line"><span class="comment">// 上面提到的变量复制，引用类型的变量复制引用的是同一对象</span></span><br><span class="line"><span class="comment">// 所以perons指向的对象在堆内存中只有一个</span></span><br><span class="line"><span class="comment">// 不要错误的认为参数是按引用传递的</span></span><br></pre></td></tr></table></div></figure>
+
+<p>第三个例子（用于解释第二个例子的疑惑）</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj.name = <span class="string">'Nicholas'</span></span><br><span class="line">  obj = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line">  obj.name = <span class="string">"Greg"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line">setName(person)</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// 'Nicholas'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个例子与上个例子不同的是在函数中重新声明了一个 obj</span></span><br><span class="line"><span class="comment">// 如果参数是引用传递，那么 person.name 应该是 "Greg"</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="4-检测类型" >
+          <span class="heading-link">4. 检测类型</span>
+        </h2>
+      <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'s'</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span></span><br><span class="line"><span class="keyword">var</span> u</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">22</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="literal">null</span></span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> s) <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b) <span class="comment">// boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> u) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> i) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> n) <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> o) <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// typeof 对于检测基本数据类型很有用</span></span><br><span class="line"><span class="comment">// 但是对于引用类型就没什么用了，所以需要用到 instanceof</span></span><br><span class="line"></span><br><span class="line">person <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">// 变量 person 是 Object 吗</span></span><br><span class="line">colors <span class="keyword">instanceof</span> <span class="built_in">Array</span>  <span class="comment">// 变量 colors 是 Array 吗</span></span><br><span class="line">pattern <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>  <span class="comment">// 变量 pattern 是 RegExp 吗</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回值为布尔类型</span></span><br><span class="line"><span class="comment">// instanceof 检测基本数据类型总会返回 false</span></span><br></pre></td></tr></table></div></figure></div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/12/%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8Fwebp/">图片格式webp</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-12</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt">
+        <h2   id="1-webp-是什么" >
+          <span class="heading-link">1. webp 是什么</span>
+        </h2>
+      <blockquote>
+<p>WebP（发音：weppy）是一种同时提供了有损压缩与无损压缩（可逆压缩）的图片文件格式</p>
+</blockquote>
+
+        <h2   id="2-兼容性" >
+          <span class="heading-link">2. 兼容性</span>
+        </h2>
+      <p><img src="img/webp_format.jpg" alt="blockchain"></p>
+
+        <h2   id="3-优缺点" >
+          <span class="heading-link">3. 优缺点</span>
+        </h2>
+      <blockquote>
+<p>优点： 比 jpg 格式更小，可以更快的加载，由于比较大的背景图</p>
+<p>缺点： 兼容性不太好</p>
+</blockquote>
+
+        <h2   id="4-在-react-项目使用" >
+          <span class="heading-link">4. 在 react 项目使用</span>
+        </h2>
+      <p>a. 修改 webpack 设置</p>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: &#x2F;\.(png|jpg|gif|svg|webp)$&#x2F;,</span><br><span class="line">  loader: &#39;url-loader&#39;,</span><br><span class="line">  options: &#123;</span><br><span class="line">    limit: 10000,</span><br><span class="line">    name: &#39;static&#x2F;images&#x2F;[name].[ext]?[hash:8]&#39;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p>b. 同时引入 jpg 格式与 webp 格式图片</p>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import aWebp from &#39;&#x2F;images&#x2F;a.webp&#39;</span><br><span class="line">import aJpg from &#39;&#x2F;images&#x2F;a.jpg&#39;</span><br></pre></td></tr></table></div></figure>
+
+<p>c. 判断浏览器是否支持 webp 格式，引用不同图片</p>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const isSupportWebp &#x3D;</span><br><span class="line">  !![].map &amp;&amp;</span><br><span class="line">  document</span><br><span class="line">    .createElement(&#39;canvas&#39;)</span><br><span class="line">    .toDataURL(&#39;image&#x2F;webp&#39;)</span><br><span class="line">    .indexOf(&#39;data:image&#x2F;webp&#39;) &#x3D;&#x3D;&#x3D; 0</span><br><span class="line">const img &#x3D; isSupportWebp ? aWebp : aJpg</span><br><span class="line"></span><br><span class="line">&lt;div</span><br><span class="line">  style&#x3D;&#123;&#123;</span><br><span class="line">    background: &#96;url($&#123;img&#125;) no-repeat scroll top&#96;,</span><br><span class="line">    backgroundSize: &#39;100% auto&#39;</span><br><span class="line">  &#125;&#125;</span><br><span class="line">&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></div></figure>
+</div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/11/%E6%97%A0%E9%99%90%E8%AF%95%E7%94%A8/">webstorm无限试用</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-11</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt">
+        <h2   id="版本：webstorm2020-1" >
+          <span class="heading-link">版本：webstorm2020.1</span>
+        </h2>
+      <p>正常情况下，试用时间为30天，使用此方法可无限延长时间，缺点是每个月需要执行一次</p>
+<p>操作步骤</p>
+<ol>
+<li>删除目录：C:\Users&lt;用户名称&gt;.WebStorm2020.1\config\eval</li>
+<li>删除目录：C:\Users&lt;用户名称&gt;.WebStorm2020.1\config\options\other.xml</li>
+<li>删除注册表项：HKEY_CURRENT_USER\Software\JavaSoft\Prefs\jetbrains\webstorm</li>
+</ol>
+<p>可将下面代码复制到txt文本中，然后后缀名改为.bat</p>
+<figure class="highlight bat"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">rd</span>/s/q "C:\Users\&lt;用户名称&gt;\.WebStorm2020.<span class="number">1</span>\config\eval"</span><br><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">rd</span>/s/q "C:\Users\&lt;用户名称&gt;\.WebStorm2020.<span class="number">1</span>\config\options\other.xml"</span><br><span class="line"></span><br><span class="line">reg delete "HKEY_CURRENT_USER\Software\JavaSoft\Prefs\jetbrains\webstorm" /f</span><br></pre></td></tr></table></div></figure></div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/07/HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95/">HTTP请求方法</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-07</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt"></div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/04/05/hello-world/">Hello World</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-04-05</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-04-05</span></span></div></header><div class="post-body"><div class="post-body-excerpt"><p>Welcome to <span class="external-link"><a   href="https://hexo.io/"  target="_blank" rel="noopener">Hexo</a><i class="fa fa-external-link"></i></span>! This is your very first post. Check <span class="external-link"><a   href="https://hexo.io/docs/"  target="_blank" rel="noopener">documentation</a><i class="fa fa-external-link"></i></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="external-link"><a   href="https://hexo.io/docs/troubleshooting.html"  target="_blank" rel="noopener">troubleshooting</a><i class="fa fa-external-link"></i></span> or you can ask me on <span class="external-link"><a   href="https://github.com/hexojs/hexo/issues"  target="_blank" rel="noopener">GitHub</a><i class="fa fa-external-link"></i></span>.</p>
+
+        <h2   id="Quick-Start" >
+          <span class="heading-link">Quick Start</span>
+        </h2>
+      
+        <h2   id="Create-a-new-post" >
+          <span class="heading-link">Create a new post</span>
+        </h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="external-link"><a   href="https://hexo.io/docs/writing.html"  target="_blank" rel="noopener">Writing</a><i class="fa fa-external-link"></i></span></p>
+
+        <h2   id="Run-server" >
+          <span class="heading-link">Run server</span>
+        </h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="external-link"><a   href="https://hexo.io/docs/server.html"  target="_blank" rel="noopener">Server</a><i class="fa fa-external-link"></i></span></p>
+
+        <h2   id="Generate-static-files" >
+          <span class="heading-link">Generate static files</span>
+        </h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="external-link"><a   href="https://hexo.io/docs/generating.html"  target="_blank" rel="noopener">Generating</a><i class="fa fa-external-link"></i></span></p>
+
+        <h2   id="Deploy-to-remote-sites" >
+          <span class="heading-link">Deploy to remote sites</span>
+        </h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="external-link"><a   href="https://hexo.io/docs/one-command-deployment.html"  target="_blank" rel="noopener">Deployment</a><i class="fa fa-external-link"></i></span></p>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><aside class="sidebar" id="sidebar"><div class="sidebar-inner"><section class="sidebar-toc hide"></section><!-- ov = overview --><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.png" alt="avatar"></div><p class="sidebar-ov-author__p">web-gm</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state__a posts" href="/archives/"><div class="sidebar-ov-state__a--count">5</div><div class="sidebar-ov-state__a--name">归档</div></a><a class="sidebar-ov-state__a categories" href="/categories/"><div class="sidebar-ov-state__a--count">3</div><div class="sidebar-ov-state__a--name">分类</div></a><a class="sidebar-ov-state__a tags" href="/tags/"><div class="sidebar-ov-state__a--count">3</div><div class="sidebar-ov-state__a--name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg" alt="知识共享"></a></div></section></div></aside><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright &copy; 2020</span><span class="fa fa-heart footer-icon"></span><span>毕日乌.</span></div><div><span>由 <a href="http://hexo.io/" title="hexo" target="_blank" rel="noopener">hexo</a> 强力驱动</span><span> v4.2.0.</span><span class="separator">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="stun" target="_blank" rel="noopener">stun</a></span><span> v1.6.0.</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="progress"></div></div><div class="back2top" id="back2top"><i class="back2top-icon fa fa-rocket"></i></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=1.6.0"></script><script src="/js/stun-boot.js?v=1.6.0"></script><script src="/js/scroll.js?v=1.6.0"></script><script src="/js/header.js?v=1.6.0"></script><script src="/js/sidebar.js?v=1.6.0"></script></body></html>
