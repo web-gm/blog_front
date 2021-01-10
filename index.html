@@ -20,7 +20,184 @@ var CONFIG = {
   prompt: {"copy_success":"复制成功","copy_error":"复制失败","creative_commons":"知识共享","copy_button":"复制代码"}
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav"><div class="header-nav-inner"><div class="header-nav-btn fa fa-bars"></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/"><i class="fa fa-home"></i>首页</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/archives/"><i class="fa fa-folder-open"></i>归档</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/categories/"><i class="fa fa-th"></i>分类</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/tags/"><i class="fa fa-tags"></i>标签</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/about/"><i class="fa fa-user"></i>关于</a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-info"><div class="header-info-inner"><div class="header-info-title">前端日常分享</div><div class="header-info-subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home"><section class="post-list"><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/31/%E5%8F%98%E9%87%8F/">变量</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-31</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav"><div class="header-nav-inner"><div class="header-nav-btn fa fa-bars"></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/"><i class="fa fa-home"></i>首页</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/archives/"><i class="fa fa-folder-open"></i>归档</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/categories/"><i class="fa fa-th"></i>分类</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/tags/"><i class="fa fa-tags"></i>标签</a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__a " href="/about/"><i class="fa fa-user"></i>关于</a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-info"><div class="header-info-inner"><div class="header-info-title">前端日常分享</div><div class="header-info-subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home"><section class="post-list"><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2021/01/10/Docker%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">Docker 基本操作</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2021-01-10</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2021-01-10</span></span></div></header><div class="post-body"><div class="post-body-excerpt"><p>Docker官方的中央仓库：这个仓库最全，但是速度较较慢<br><span class="external-link"><a   href="https://hub.docker.com/"  target="_blank" rel="noopener">https://hub.docker.com/</a><i class="fa fa-external-link"></i></span></p>
+<p>国内镜像网站:网易蜂巢、daoCloud</p>
+<p><span class="external-link"><a   href="https://c.163yun.com/hub#/home"  target="_blank" rel="noopener">https://c.163yun.com/hub#/home</a><i class="fa fa-external-link"></i></span></p>
+<p><span class="external-link"><a   href="http://hub.daocloud.io/"  target="_blank" rel="noopener">http://hub.daocloud.io/</a><i class="fa fa-external-link"></i></span></p>
+<p>/etc/docker/daemon.json<br>{<br>  “registry-mirrors:[]<br>}</p>
+<p>systemctl daemon reload<br>systemctl restart docker</p>
+<figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2. 查看全部本地的景象</span></span><br><span class="line">docker images</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3. 删除本地镜像</span></span><br><span class="line">docker rmi 镜像的标识</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4. 镜像的导入导出（不规范）</span></span><br><span class="line"><span class="comment"># 将本地的镜像导出</span></span><br><span class="line">docker save -o 导出的路径 镜像id</span><br><span class="line"><span class="comment"># 加载本地的镜像文件</span></span><br><span class="line">docker load -i 镜像文件</span><br><span class="line"><span class="comment"># 修改镜像名称</span></span><br><span class="line">docker tag 镜像id 新镜像名称：版本</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="2-4-容器的操作" >
+          <span class="heading-link">2.4 容器的操作</span>
+        </h2>
+      <figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 运行容器</span></span><br><span class="line"><span class="comment"># 简单操作</span></span><br><span class="line">docker run 镜像的标识|镜像名称[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 常用的参数</span></span><br><span class="line">docker run -d -p 宿主机端口:容器端口 --name 容器名称 镜像的标识|镜像名称[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># -d: 代表后台运行容器</span></span><br><span class="line"><span class="comment"># -p: 宿主机端口：容器端口</span></span><br><span class="line"><span class="comment"># --name 指定容器名称</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2. 查看正在运行的容器</span></span><br><span class="line"></span><br><span class="line">docker ps [-qa]</span><br><span class="line"></span><br><span class="line"><span class="comment"># -a: 查看全部容器： 包括没有运行</span></span><br><span class="line"><span class="comment"># -q: 只查看容器的标识</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3. 查看容器的日志</span></span><br><span class="line">docker logs -f 容器id</span><br><span class="line"><span class="comment"># -f: 滚动查看日志的最后几行</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4. 进入容器内部</span></span><br><span class="line">docker <span class="built_in">exec</span> =it 容器id bash</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 5. 删除容器(需要先停止)</span></span><br><span class="line"><span class="comment"># 停止指定容器 </span></span><br><span class="line">docker stop 镜像id</span><br><span class="line"><span class="comment"># 删除指定容器</span></span><br><span class="line">docker rm 镜像id</span><br><span class="line"><span class="comment"># 删除全部容器</span></span><br><span class="line">docker rm $(docker ps -qa)</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight sh"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 5. 启动容器</span></span><br><span class="line"><span class="comment"># 启动指定容器 </span></span><br><span class="line">docker start 镜像id</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h2   id="3-4-数据卷" >
+          <span class="heading-link">3.4 数据卷</span>
+        </h2>
+      <p><code>数据卷: 将宿主机的一个目录映射到容器的一个目录中
+  可以在宿主机中操作目录的内容，那么容器内部映射的文件，也已跟着一起改变</code></p>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 1. 创建数据卷</span><br><span class="line">docker volume create 数据卷名称</span><br><span class="line"># 创建数据卷之后，默认会存放在一个目录下 &#x2F;var&#x2F;lib&#x2F;docker&#x2F;volume&#x2F;数据卷名称&#x2F;_data</span><br><span class="line"></span><br><span class="line"># 2. 查看数据卷的详细信息</span><br><span class="line">docker volume inspect 数据卷名称</span><br><span class="line"></span><br><span class="line"># 3. 查看全部数据卷</span><br><span class="line">docker volume ls</span><br><span class="line"></span><br><span class="line"># 4. 删除数据卷</span><br><span class="line">docker volume rm 数据卷名称</span><br><span class="line"></span><br><span class="line"># 5. 应用数据卷</span><br><span class="line"># 当你映射数据卷时,如果数据卷不存在,Docker 会自动创建</span><br><span class="line">docker run -v 数据卷名称:容器内部的路径 镜像id</span><br><span class="line"></span><br><span class="line"># 指定一个路径作为数据卷的存放位置</span><br><span class="line">docker run -v 路径: 容器内部的路径 镜像id</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="Docker自定义镜像" >
+          <span class="heading-link">Docker自定义镜像</span>
+        </h2>
+      <p>中央仓库上的镜像也是用户自己上传的</p>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> # 1. 创建一个Dockerfile文件(无后缀)， 并且指定自定义镜像信息</span><br><span class="line"># Dockerfile 常用的内容</span><br><span class="line">from: 指定当前自定义镜像依赖的环境</span><br><span class="line">copyL 将相对下路径的内容复制到自定义镜像中</span><br><span class="line">workdir 声明镜像的默认工作目录</span><br><span class="line">cmd 需要执行的命令</span><br><span class="line"></span><br><span class="line"># eg</span><br><span class="line">from daocloud.io&#x2F;library&#x2F;镜像名称</span><br><span class="line">copy ssm.war &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="Docker-Compose" >
+          <span class="heading-link">Docker-Compose</span>
+        </h2>
+      <p>之前运行一个镜像，需要添加大量的参数<br>可以通过Docker-Compose编写这些参数<br>Docker-Compose可以帮助批量管理容器<br>只需要一个docker-compose.yml文件维护即可</p>
+</div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/06/16/1/">1</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-06-16</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-06-16</span></span></div></header><div class="post-body"><div class="post-body-excerpt">function debounce(fn, wait) {
+    let timeout = null; // 创建一个标记用来存放定时器的返回值
+    return function () {
+        var context = this  // 修复this指向
+		    var args = arguments   // 修复event
+        clearTimeout(timeout); // 每当用户输入的时候把前一个 setTimeout clear 掉
+        timeout = setTimeout(() => { // 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数
+            fn.apply(context, args);
+        }, wait);
+    };
+}
+
+function throttle(fn) {
+    let canRun = true; // 通过闭包保存一个标记
+    return function () {
+        if (!canRun) return; // 在函数开头判断标记是否为true，不为true则return
+        canRun = false; // 立即设置为false
+        setTimeout(() => { // 将外部传入的函数的执行放在setTimeout中
+            fn.apply(this, arguments);
+            // 最后在setTimeout执行完毕后再把标记设置为true(关键)表示可以执行下一次循环了。当定时器没有执行的时候标记永远是false，在开头被return掉
+            canRun = true;
+        }, 500);
+    };
+}</div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/06/16/index/">index</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-06-16</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-06-16</span></span></div></header><div class="post-body"><div class="post-body-excerpt">Function.prototype.call2 = function(context) {
+    var context = context || window
+    context.fn = this;
+    var args = [];
+    for(var i = 1, len = arguments.length; i < len; i++) {
+        args.push(arguments[i]);
+    }
+    var result = context.fn(...args)
+    delete context.fn;
+    return result
+}
+
+// 测试一下
+var foo = {
+    value: 1
+};
+var obj = {
+    value: 1
+}
+function bar(name, age) {
+    console.log(this.value);
+    return {
+        value: this.value,
+        name: name,
+        age: age
+    }
+}
+
+bar.call2(foo, 'kevin', 18); 
+console.log(bar.call2(obj, 'kevin', 18));
+
+
+Function.prototype.my_call = function (context) {
+    var context = context || window
+    context.fn = this
+    var args = []
+    for(let i = 1; i < arguments.length; i++){
+        args.push(arguments[i])
+    }
+    var result = context.fn(...args)
+    delete context.fn
+    return result
+}
+
+Function.prototype.my_qpply = function (context, arr) {
+    var context = context || window; // 非严格模式下 null会被转换为window
+    context.fn = this;
+    let args = arr || []
+    var result = context.fn(...args)
+    delete context.fn
+    return result
+}</div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/06/10/javascript%E4%B9%8Bcall/">javascript之call、apply、bind 和 new</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-06-10</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-06-16</span></span></div></header><div class="post-body"><div class="post-body-excerpt">
+        <h2   id="call与apply定义" >
+          <span class="heading-link">call与apply定义</span>
+        </h2>
+      <blockquote>
+<p>apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。</p>
+<p>call() 方法使用一个指定的 this 值和单独给出的一个或多个参数来调用一个函数。</p>
+<p>区别：call() 方法接受的是一个参数列表，而 apply() 方法接受的是一个包含多个参数的数组</p>
+</blockquote>
+<p>举例</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Product</span>(<span class="params">name, price</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.price = price;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Food</span>(<span class="params">name, price</span>) </span>&#123;</span><br><span class="line">  Product.call(<span class="keyword">this</span>, name, price);</span><br><span class="line">  <span class="keyword">this</span>.category = <span class="string">'food'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Food(<span class="string">'cheese'</span>, <span class="number">5</span>).name); <span class="comment">// cheese</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Food1</span>(<span class="params">name, price</span>) </span>&#123;</span><br><span class="line">  Product.apply(<span class="keyword">this</span>, [name, price])</span><br><span class="line">  <span class="keyword">this</span>.category = <span class="string">'food1'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Food1(<span class="string">'orange'</span>, <span class="number">5</span>).name); <span class="comment">// orange</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="手动实现call" >
+          <span class="heading-link">手动实现call</span>
+        </h2>
+      <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 总体思路：将函数添加到obj的属性上，执行方法，删除方法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.my_call = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = context || <span class="built_in">window</span>; <span class="comment">// 非严格模式下 null会被转换为window</span></span><br><span class="line">    context.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">var</span> args = []; <span class="comment">// 将传入的参数进行分割</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; <span class="built_in">arguments</span>.length; i++)&#123;</span><br><span class="line">        args.push(<span class="built_in">arguments</span>[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> result = context.fn(...args)</span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="手动实现-apply" >
+          <span class="heading-link">手动实现 apply</span>
+        </h2>
+      <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.my_qpply = <span class="function"><span class="keyword">function</span> (<span class="params">context, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = context || <span class="built_in">window</span>; <span class="comment">// 非严格模式下 null会被转换为window</span></span><br><span class="line">    context.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">let</span> args = arr || []</span><br><span class="line">    <span class="keyword">var</span> result = context.fn(...args)</span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="bind-定义" >
+          <span class="heading-link">bind 定义</span>
+        </h2>
+      <blockquote>
+<p>bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。</p>
+<p>与call和apply的区别： bind方法返回的是一个绑定this的函数；call和apply是在方法调用时绑定this</p>
+</blockquote>
+<p>举例</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">module</span> = &#123;</span><br><span class="line">  x: <span class="number">42</span>,</span><br><span class="line">  getX: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> unboundGetX = <span class="built_in">module</span>.getX;</span><br><span class="line"><span class="built_in">console</span>.log(unboundGetX()); <span class="comment">// The function gets invoked at the global scope</span></span><br><span class="line"><span class="comment">// expected output: undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> boundGetX = unboundGetX.bind(<span class="built_in">module</span>);</span><br><span class="line"><span class="built_in">console</span>.log(boundGetX());</span><br><span class="line"><span class="comment">// expected output: 42</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="手动实现bind" >
+          <span class="heading-link">手动实现bind</span>
+        </h2>
+      <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> thatFunc = <span class="keyword">this</span>, thatArg = <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> funcArgs = args.concat([].slice.call(<span class="built_in">arguments</span>))</span><br><span class="line">    <span class="keyword">return</span> thatFunc.apply(thatArg, funcArgs);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h2   id="参考链接" >
+          <span class="heading-link">参考链接</span>
+        </h2>
+      <ol>
+<li><span class="external-link"><a   href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"  target="_blank" rel="noopener">MDN-bind</a><i class="fa fa-external-link"></i></span></li>
+<li><span class="external-link"><a   href="https://github.com/mqyqingfeng/Blog/issues/11"  target="_blank" rel="noopener">JavaScript深入之call和apply的模拟实现
+</a><i class="fa fa-external-link"></i></span></li>
+<li><span class="external-link"><a   href="https://github.com/mqyqingfeng/Blog/issues/12"  target="_blank" rel="noopener">JavaScript深入之bind的模拟实现</a><i class="fa fa-external-link"></i></span></li>
+<li><span class="external-link"><a   href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call"  target="_blank" rel="noopener">MDN-call</a><i class="fa fa-external-link"></i></span></li>
+<li><span class="external-link"><a   href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call"  target="_blank" rel="noopener">MDN-apply</a><i class="fa fa-external-link"></i></span></li>
+</ol>
+</div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/31/%E5%8F%98%E9%87%8F/">变量</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-31</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt">
         <h2   id="1-基本类型和引用类型" >
           <span class="heading-link">1. 基本类型和引用类型</span>
         </h2>
@@ -36,7 +213,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></he
 <p><strong>复制过程</strong><br><img src="img/4-1.png" alt="复制过程"></p>
 <p>2）引用类型的复制（易出面试题）</p>
 <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1</span><br><span class="line">obj2.name = <span class="string">'Mary'</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1.name) <span class="comment">// Mary</span></span><br></pre></td></tr></table></div></figure>
-<p><strong>复制过程</strong><br><img src="img/4-2.png" alt="复制过程"></p>
+<p><strong>复制过程</strong><br><img src="img/4-2.jpg" alt="复制过程"></p>
 
         <h2   id="3-传递参数" >
           <span class="heading-link">3. 传递参数</span>
@@ -87,49 +264,17 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></he
 
 <p>c. 判断浏览器是否支持 webp 格式，引用不同图片</p>
 <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const isSupportWebp &#x3D;</span><br><span class="line">  !![].map &amp;&amp;</span><br><span class="line">  document</span><br><span class="line">    .createElement(&#39;canvas&#39;)</span><br><span class="line">    .toDataURL(&#39;image&#x2F;webp&#39;)</span><br><span class="line">    .indexOf(&#39;data:image&#x2F;webp&#39;) &#x3D;&#x3D;&#x3D; 0</span><br><span class="line">const img &#x3D; isSupportWebp ? aWebp : aJpg</span><br><span class="line"></span><br><span class="line">&lt;div</span><br><span class="line">  style&#x3D;&#123;&#123;</span><br><span class="line">    background: &#96;url($&#123;img&#125;) no-repeat scroll top&#96;,</span><br><span class="line">    backgroundSize: &#39;100% auto&#39;</span><br><span class="line">  &#125;&#125;</span><br><span class="line">&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></div></figure>
-</div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/11/%E6%97%A0%E9%99%90%E8%AF%95%E7%94%A8/">webstorm无限试用</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-11</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt">
-        <h2   id="版本：webstorm2020-1" >
-          <span class="heading-link">版本：webstorm2020.1</span>
+</div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/11/%E6%97%A0%E9%99%90%E8%AF%95%E7%94%A8/">webstorm无限试用</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-11</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-06-16</span></span></div></header><div class="post-body"><div class="post-body-excerpt"><p><strong>只有2020.1以前的版本才可以生效</strong></p>
+
+        <h2   id="版本：webstorm2019-3" >
+          <span class="heading-link">版本：webstorm2019.3</span>
         </h2>
       <p>正常情况下，试用时间为30天，使用此方法可无限延长时间，缺点是每个月需要执行一次</p>
 <p>操作步骤</p>
 <ol>
-<li>删除目录：C:\Users&lt;用户名称&gt;.WebStorm2020.1\config\eval</li>
-<li>删除目录：C:\Users&lt;用户名称&gt;.WebStorm2020.1\config\options\other.xml</li>
+<li>删除目录：C:\Users&lt;用户名称&gt;.WebStorm2019.3\config\eval</li>
+<li>删除目录：C:\Users&lt;用户名称&gt;.WebStorm2019.3\config\options\other.xml</li>
 <li>删除注册表项：HKEY_CURRENT_USER\Software\JavaSoft\Prefs\jetbrains\webstorm</li>
 </ol>
 <p>可将下面代码复制到txt文本中，然后后缀名改为.bat</p>
-<figure class="highlight bat"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">rd</span>/s/q "C:\Users\&lt;用户名称&gt;\.WebStorm2020.<span class="number">1</span>\config\eval"</span><br><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">rd</span>/s/q "C:\Users\&lt;用户名称&gt;\.WebStorm2020.<span class="number">1</span>\config\options\other.xml"</span><br><span class="line"></span><br><span class="line">reg delete "HKEY_CURRENT_USER\Software\JavaSoft\Prefs\jetbrains\webstorm" /f</span><br></pre></td></tr></table></div></figure></div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/07/HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95/">HTTP请求方法</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-07</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt"></div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/04/05/hello-world/">Hello World</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-04-05</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-04-05</span></span></div></header><div class="post-body"><div class="post-body-excerpt"><p>Welcome to <span class="external-link"><a   href="https://hexo.io/"  target="_blank" rel="noopener">Hexo</a><i class="fa fa-external-link"></i></span>! This is your very first post. Check <span class="external-link"><a   href="https://hexo.io/docs/"  target="_blank" rel="noopener">documentation</a><i class="fa fa-external-link"></i></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="external-link"><a   href="https://hexo.io/docs/troubleshooting.html"  target="_blank" rel="noopener">troubleshooting</a><i class="fa fa-external-link"></i></span> or you can ask me on <span class="external-link"><a   href="https://github.com/hexojs/hexo/issues"  target="_blank" rel="noopener">GitHub</a><i class="fa fa-external-link"></i></span>.</p>
-
-        <h2   id="Quick-Start" >
-          <span class="heading-link">Quick Start</span>
-        </h2>
-      
-        <h2   id="Create-a-new-post" >
-          <span class="heading-link">Create a new post</span>
-        </h2>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="external-link"><a   href="https://hexo.io/docs/writing.html"  target="_blank" rel="noopener">Writing</a><i class="fa fa-external-link"></i></span></p>
-
-        <h2   id="Run-server" >
-          <span class="heading-link">Run server</span>
-        </h2>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="external-link"><a   href="https://hexo.io/docs/server.html"  target="_blank" rel="noopener">Server</a><i class="fa fa-external-link"></i></span></p>
-
-        <h2   id="Generate-static-files" >
-          <span class="heading-link">Generate static files</span>
-        </h2>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="external-link"><a   href="https://hexo.io/docs/generating.html"  target="_blank" rel="noopener">Generating</a><i class="fa fa-external-link"></i></span></p>
-
-        <h2   id="Deploy-to-remote-sites" >
-          <span class="heading-link">Deploy to remote sites</span>
-        </h2>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="external-link"><a   href="https://hexo.io/docs/one-command-deployment.html"  target="_blank" rel="noopener">Deployment</a><i class="fa fa-external-link"></i></span></p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><aside class="sidebar" id="sidebar"><div class="sidebar-inner"><section class="sidebar-toc hide"></section><!-- ov = overview --><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.png" alt="avatar"></div><p class="sidebar-ov-author__p">web-gm</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state__a posts" href="/archives/"><div class="sidebar-ov-state__a--count">5</div><div class="sidebar-ov-state__a--name">归档</div></a><a class="sidebar-ov-state__a categories" href="/categories/"><div class="sidebar-ov-state__a--count">3</div><div class="sidebar-ov-state__a--name">分类</div></a><a class="sidebar-ov-state__a tags" href="/tags/"><div class="sidebar-ov-state__a--count">3</div><div class="sidebar-ov-state__a--name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg" alt="知识共享"></a></div></section></div></aside><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright &copy; 2020</span><span class="fa fa-heart footer-icon"></span><span>毕日乌.</span></div><div><span>由 <a href="http://hexo.io/" title="hexo" target="_blank" rel="noopener">hexo</a> 强力驱动</span><span> v4.2.0.</span><span class="separator">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="stun" target="_blank" rel="noopener">stun</a></span><span> v1.6.0.</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="progress"></div></div><div class="back2top" id="back2top"><i class="back2top-icon fa fa-rocket"></i></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=1.6.0"></script><script src="/js/stun-boot.js?v=1.6.0"></script><script src="/js/scroll.js?v=1.6.0"></script><script src="/js/header.js?v=1.6.0"></script><script src="/js/sidebar.js?v=1.6.0"></script></body></html>
+<figure class="highlight bat"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">rd</span>/s/q "C:\Users\&lt;用户名称&gt;\.WebStorm2019.<span class="number">3</span>\config\eval"</span><br><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">rd</span>/s/q "C:\Users\&lt;用户名称&gt;\.WebStorm2019.<span class="number">3</span>\config\options\other.xml"</span><br><span class="line"></span><br><span class="line">reg delete "HKEY_CURRENT_USER\Software\JavaSoft\Prefs\jetbrains\webstorm" /f</span><br></pre></td></tr></table></div></figure></div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/07/HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95/">HTTP请求方法</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-07</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-05-31</span></span></div></header><div class="post-body"><div class="post-body-excerpt"></div></div></article><article class="post"><header class="post-header"><h1 class="post-header-title"><a class="post-header-title__a" href="/2020/05/07/webpack+react/">webpack构建react项目</a></h1><div class="post-header-meta"><span class="post-header-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2020-05-07</span></span><span class="post-header-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2020-09-05</span></span></div></header><div class="post-body"><div class="post-body-excerpt"></div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><aside class="sidebar" id="sidebar"><div class="sidebar-inner"><section class="sidebar-toc hide"></section><!-- ov = overview --><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.png" alt="avatar"></div><p class="sidebar-ov-author__p">web-gm</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state__a posts" href="/archives/"><div class="sidebar-ov-state__a--count">9</div><div class="sidebar-ov-state__a--name">归档</div></a><a class="sidebar-ov-state__a categories" href="/categories/"><div class="sidebar-ov-state__a--count">4</div><div class="sidebar-ov-state__a--name">分类</div></a><a class="sidebar-ov-state__a tags" href="/tags/"><div class="sidebar-ov-state__a--count">3</div><div class="sidebar-ov-state__a--name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg" alt="知识共享"></a></div></section></div></aside><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright &copy; 2021</span><span class="fa fa-heart footer-icon"></span><span>毕日乌.</span></div><div><span>由 <a href="http://hexo.io/" title="hexo" target="_blank" rel="noopener">hexo</a> 强力驱动</span><span> v4.2.0.</span><span class="separator">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="stun" target="_blank" rel="noopener">stun</a></span><span> v1.6.0.</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="progress"></div></div><div class="back2top" id="back2top"><i class="back2top-icon fa fa-rocket"></i></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=1.6.0"></script><script src="/js/stun-boot.js?v=1.6.0"></script><script src="/js/scroll.js?v=1.6.0"></script><script src="/js/header.js?v=1.6.0"></script><script src="/js/sidebar.js?v=1.6.0"></script></body></html>
